@@ -1,0 +1,17 @@
+<table class="table table-striped">
+  <tr>
+    <th>Curso</th>
+    <th>Descrição</th>
+    <th>Duração (h)</th>
+  </tr>
+  <tr *ngFor="let c of cursos">
+    <td>
+        <a [routerLink]="['/detalhe', c.id]" [ngClass]="{'desconto': c.nome == 'Angular'}">
+        {{ c.nome | uppercase}}
+        </a>
+    </td>
+    <td>{{ c.descricao }}</td>
+    <td>{{ c.duracao +'h' }}</td>
+  </tr>
+</table>
+<a routerLink="/novo" class="btn btn-primary btn-block">Novo Curso</a>
